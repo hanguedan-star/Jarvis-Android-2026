@@ -1,0 +1,10 @@
+{
+  "name": "JARVIS AI - Assistant Vocal Intelligent",
+  "description": "Assistant personnel futuriste inspiré de JARVIS avec interface holographique sombre, commandes vocales et réponses intelligentes en français propulsées par Gemini.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-orbitron: 'Orbitron', monospace, sans-serif;
+    --font-rajdhani: 'Rajdhani', sans-serif;
+    --font-space: 'Space Grotesk', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-space);
+    background-color: #030712;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, .font-mono-hud {
+    font-family: var(--font-orbitron);
+  }
+
+  .font-hud {
+    font-family: var(--font-rajdhani);
+  }
+}
+
+/* Custom Futuristic Animations */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4), inset 0 0 20px rgba(6, 182, 212, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(6, 182, 212, 0.8), inset 0 0 35px rgba(6, 182, 212, 0.6);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes listeningWave {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(14, 165, 233, 0.6), inset 0 0 25px rgba(56, 189, 248, 0.5);
+    border-color: rgba(56, 189, 248, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 70px rgba(56, 189, 248, 0.9), inset 0 0 45px rgba(125, 211, 252, 0.7);
+    border-color: rgba(186, 230, 253, 1);
+  }
+}
+
+@keyframes speakingPulse {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), inset 0 0 30px rgba(129, 140, 248, 0.4);
+    border-color: rgba(99, 102, 241, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(129, 140, 248, 0.85), inset 0 0 50px rgba(165, 180, 252, 0.65);
+    border-color: rgba(199, 210, 254, 1);
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverseSlow 25s linear infinite;
+}
+
+.animate-spin-medium {
+  animation: spinSlow 12s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-listening {
+  animation: listeningWave 1.4s ease-in-out infinite;
+}
+
+.animate-speaking {
+  animation: speakingPulse 1.2s ease-in-out infinite;
+}
+
+/* Sci-fi HUD Grid & Scanlines */
+.hud-grid {
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hud-panel {
+  background: rgba(8, 20, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.hud-panel-active {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+}
+
+/* Glassmorphism scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.6);
+}
